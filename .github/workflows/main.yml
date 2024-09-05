@@ -1,9 +1,10 @@
 name: "Roam Research backup"
 
 on:
-  push:
-    branches:
-      - main
+  # if you are using a schedule, you can remove the push event
+  # push:
+  #   branches:
+  #     - main
   schedule:
       # Here you can change how often your backup runs. See https://crontab.guru/examples.html
       - cron: "0 0 * * *"
