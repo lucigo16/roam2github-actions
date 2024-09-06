@@ -38,9 +38,9 @@ jobs:
         run: |
           #!/bin/bash
           cd /tmp
-          git clone -q https://github.com/everruler12/roam2github.git roam2github
+          git clone -q https://github.com/wqing2000/roam2github.git roam2github
           cd $_
-          npm i
+          npm i --omit=dev
           npm run backup -s
           
           cd /home/runner/work/roam_backup/roam_backup
