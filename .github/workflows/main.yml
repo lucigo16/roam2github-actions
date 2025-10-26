@@ -46,7 +46,7 @@ jobs:
           cd /home/runner/work/roam_backup/roam_backup
           curl https://raw.githubusercontent.com/lucigo16/roam2github-actions/main/scripts/roam_image_backup.py -o scripts/roam_image_backup.py          
           curl https://raw.githubusercontent.com/lucigo16/roam2github-actions/main/scripts/main.py -o scripts/main.py
-          cd scripts && python main.py
+          python scripts/main.py
         env:
           ROAM_EMAIL: ${{ secrets.ROAM_EMAIL }}
           ROAM_PASSWORD: ${{ secrets.ROAM_PASSWORD }}
