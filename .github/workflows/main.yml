@@ -42,10 +42,14 @@ jobs:
           cd $_
           npm i --omit=dev
           npm run backup -s
+
+          cd $GITHUB_WORKSPACE
           
-          cd /home/runner/work/roam_backup/roam_backup
-          curl https://raw.githubusercontent.com/lucigo16/roam2github-actions/main/scripts/roam_image_backup.py -o scripts/roam_image_backup.py          
-          curl https://raw.githubusercontent.com/lucigo16/roam2github-actions/main/scripts/main.py -o scripts/main.py
+          mkdir -p scripts
+          cd scripts
+          curl -fL https://raw.githubusercontent.com/lucigo16/roam2github-actions/main/scripts/roam_image_backup.py -o roam_image_backup.py
+          curl -fL https://raw.githubusercontent.com/lucigo16/roam2github-actions/main/scripts/main.py -o main.py
+          cd ..
           python scripts/main.py
         env:
           ROAM_EMAIL: ${{ secrets.ROAM_EMAIL }}
